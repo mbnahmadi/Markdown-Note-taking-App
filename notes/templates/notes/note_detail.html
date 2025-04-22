@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ note.title }}</title>
+</head>
+<body>
+    <h1>{{ note.title }}</h1>
+    <h2>Rendered HTML:</h2>
+    <div>{{ html_content|safe }}</div>
+    <h2>Grammar Check:</h2>
+    <ul>
+        {% for error in grammar_errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'upload_note' %}">Upload Another Note</a>
+</body>
+</html>
